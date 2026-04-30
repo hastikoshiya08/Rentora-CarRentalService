@@ -412,6 +412,17 @@ useEffect(() => {
     return false;
   };
 
+  const getCurrentDateTime = () => {
+    const now = new Date();
+    const pad = (n) => n.toString().padStart(2, "0");
+
+    return `${now.getFullYear()}-${pad(now.getMonth() + 1)}-${pad(
+      now.getDate()
+    )}T${pad(now.getHours())}:${pad(now.getMinutes())}`;
+  };
+
+  const minDateTime = getCurrentDateTime();
+
   return (
     <div className="min-h-screen bg-black text-white pt-24 px-6 md:px-12">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-10">
@@ -553,6 +564,7 @@ useEffect(() => {
                     <input
                       type="datetime-local"
                       value={fromDate}
+                      min={minDateTime}
                       onChange={(e) => setFromDate(e.target.value)}
                       className="w-full bg-black border border-yellow-500/30 rounded-xl px-4 py-3 text-sm"
                     />
@@ -566,6 +578,7 @@ useEffect(() => {
                     <input
                       type="datetime-local"
                       value={toDate}
+                      min={fromDate || minDateTime}
                       onChange={(e) => setToDate(e.target.value)}
                       className="w-full bg-black border border-yellow-500/30 rounded-xl px-4 py-3 text-sm"
                     />

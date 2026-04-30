@@ -35,7 +35,7 @@ const UserHome = () => {
     sortBy: "",
   });
 
-  const categories = ["All", "SUV", "Sedan", "Hatchback", "Mini"];
+  const categories = ["All", "SUV", "Sedan", "Hatchback", "Mini", "Luxury"];
 
   //  FETCH DATA
   useEffect(() => {

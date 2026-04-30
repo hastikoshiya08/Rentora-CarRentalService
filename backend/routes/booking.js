@@ -76,7 +76,7 @@ router.put("/cancel/:id", async (req, res) => {
 
     await Notification.create({
       user: booking.user._id,
-      message: "Your booking has been cancelled ❌",
+      message: `${booking.user.name}, your booking has been cancelled ❌`,
       link: "/mybookings"
     });
 
@@ -114,7 +114,7 @@ router.put("/admin/status/:id", async (req, res) => {
 
     await Notification.create({
       user: booking.user._id,
-      message: `Your booking has been ${status}`,
+      message: `${booking.user.name}, your booking has been ${status}`,
       link: "/mybookings"
     });
 
@@ -145,6 +145,7 @@ router.put("/admin/refund/:id", async (req, res) => {
       return res.status(400).json({ message: "Already refunded" });
     }
 
+    // ✅ UPDATE BOOKING
     booking.paymentStatus = "Refunded";
     booking.status = "Cancelled";
     booking.refundStatus = "Completed";
@@ -153,16 +154,34 @@ router.put("/admin/refund/:id", async (req, res) => {
 
     await booking.save();
 
+    // =========================
+    // ✅ SEND EMAIL HERE
+    // =========================
+    await sendEmail(
+      booking.user.email,
+      "Refund Processed Successfully 💰",
+      `
+        <h2>Hello ${booking.user.name},</h2>
+        <p>Your refund has been successfully processed.</p>
+        <p><strong>Amount:</strong> ₹${booking.refundAmount}</p>
+        <p>Thank you for using our service.</p>
+      `
+    );
+
+    console.log("📧 Refund email sent");
+
+    // =========================
     // ✅ SAVE NOTIFICATION
+    // =========================
     await Notification.create({
       user: booking.user._id,
-      message: "Your refund has been processed 💰",
+      message: `${booking.user.name}, your refund has been processed 💰`,
       link: "/mybookings"
     });
 
-    console.log("🔔 Refund notification saved in DB");
+    console.log("🔔 Refund notification saved");
 
-    res.json({ message: "Refund success", booking });
+    res.json({ message: "Refund success + email sent", booking });
 
   } catch (err) {
     console.error("REFUND ERROR 👉", err);
