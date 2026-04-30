@@ -1,0 +1,98 @@
+import HondaCity from "../assets/Honda-city.png";
+import Creata from "../assets/Creata.png";
+import Dzire from '../assets/Dzire.png';
+import Innova from '../assets/Innova.png';
+import Scorpio from '../assets/Scorpio.png';
+import Audi from '../assets/Audi.png';
+
+const cars = [
+  {
+    id: 1,
+    name: "City",
+    type: "Sedan",
+    company: "Honda",
+    image: HondaCity,
+    price: "2000",
+    acCondition: "Yes",
+    seatingCapacity: "5",
+    color: "White",
+  },
+  {
+    id: 2,
+    name: "Creta",
+    type: "SUV",
+    company: "Hyundai",
+    image: Creata,
+    price: "2500",
+    acCondition: "Yes",
+    seatingCapacity: "5",
+    color: "White",
+  },
+  {
+    id: 3,
+    name: "Dzire",
+    type: "SUV",
+    company: "Maruti",
+    image: Dzire,
+    price: "1800",
+    acCondition: "Yes",
+    seatingCapacity: "5",
+    color: "White",
+  },
+  {
+    id:4,
+    name: "Innova",
+    type: "SUV",
+    company: "Toyota",
+    image: Innova,
+    price: "2999",
+    acCondition: "Yes",
+    seatingCapacity: "7",
+    color: "White",
+  },
+  {
+    id:5,
+    name: "Scorpio",
+    type: "SUV",
+    company: "Mahindra",
+    image: Scorpio,
+    price: "4999",
+    acCondition: "Yes",
+    seatingCapacity: "7",
+    color: "White",
+  },
+  {
+    id:6,
+    name: "Audi Q7",
+    type: "SUV",
+    company: "Audi",
+    image: Audi,
+    price: "9999",
+    acCondition: "Yes",
+    seatingCapacity: "5",
+    color: "White",
+  },
+  {
+    id:7,
+    name: "Audi Q7",
+    type: "SUV",
+    company: "Audi",
+    image: Audi,
+    price: "9999",
+    acCondition: "Yes",
+    seatingCapacity: "5",
+    color: "White",
+  },
+  {
+    id:8,
+    name: "Audi Q7",
+    type: "Luxury",
+    company: "Audi",
+    image: Audi,
+    price: "9999",
+    acCondition: "Yes",
+    seatingCapacity: "5",
+    color: "White",
+  },
+];
+export default cars;
