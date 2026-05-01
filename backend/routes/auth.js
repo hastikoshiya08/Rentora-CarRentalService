@@ -19,7 +19,7 @@ const cpUpload = upload.fields([
 
 // POST /api/auth/register
 router.post(
-  '/admin/register',
+  '/register',
   cpUpload,
   [
     body('name', 'Name is required').trim().notEmpty(),
@@ -176,7 +176,7 @@ router.post(
 //   }
 // });
 
-router.post("/admin/login", async (req, res) => {
+router.post("/login", async (req, res) => {
   try {
     const { email, password } = req.body;
 

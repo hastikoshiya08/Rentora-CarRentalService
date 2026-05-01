@@ -24,7 +24,7 @@ app.use(cors({
 //  Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://bookmycar-tau.vercel.app"
+  "https://bookmycar-tau.vercel.app",
 ];
 
 //  Socket.io Setup

@@ -116,7 +116,7 @@ function App() {
               <AdminLayout />
             </AdminProtectedRoute>
           }>
-          <Route path="dashboard" element={<Dashboard />} />
+          <Route path="/admin/dashboard" element={<Dashboard />} />
           <Route path="newregister" element={<RegisterAdmin />} />
           <Route path="add-variants" element={<AddVariants />} />
           <Route path="variants" element={<Variants />} />
@@ -142,6 +142,7 @@ function App() {
         </Route> */}
         
       </Routes>
+   
     </>
   );
 }
