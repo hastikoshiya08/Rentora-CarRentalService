@@ -118,7 +118,7 @@ const handleInvoice = (b) => {
       </h1>
 
       {/* FILTER */}
-      <div className="flex justify-center bg-black gap-3 flex-wrap">
+      <div className="flex justify-center gap-3 flex-wrap">
         {["All", "Upcoming", "Completed", "Cancelled"].map((filter) => (
           <button
             key={filter}
@@ -126,7 +126,7 @@ const handleInvoice = (b) => {
             className={`px-5 py-2 rounded-full ${
               selectedFilter === filter
                 ? "bg-yellow-500 text-black"
-                : "bg-gray-700 text-white"
+                : "bg-white/10"
             }`}
           >
             {filter}
