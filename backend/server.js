@@ -11,6 +11,16 @@ connectDB();
 
 const server = http.createServer(app);
 
+app.use(cors({
+  origin: [
+    "http://localhost:5173",
+    "https://bookmycar-tau.vercel.app", // ✅ aa add karo
+    "https://rentora-car-rental-service.vercel.app",
+    "https://rentora-car-rental-service-o5x8kbaov-hastikoshiya08s-projects.vercel.app"
+  ],
+  credentials: true
+}));
+
 //  Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
