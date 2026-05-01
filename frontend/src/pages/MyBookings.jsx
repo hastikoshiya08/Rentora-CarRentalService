@@ -118,7 +118,7 @@ const handleInvoice = (b) => {
       </h1>
 
       {/* FILTER */}
-      <div className="flex justify-center gap-3 flex-wrap">
+      <div className="flex justify-center bg-black gap-3 flex-wrap">
         {["All", "Upcoming", "Completed", "Cancelled"].map((filter) => (
           <button
             key={filter}
