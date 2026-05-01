@@ -126,7 +126,7 @@ const handleInvoice = (b) => {
             className={`px-5 py-2 rounded-full ${
               selectedFilter === filter
                 ? "bg-yellow-500 text-black"
-                : "bg-black-700 text-white"
+                : "bg-gray-700 text-white"
             }`}
           >
             {filter}
