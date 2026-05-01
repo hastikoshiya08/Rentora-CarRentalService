@@ -5,7 +5,7 @@ import { User, Mail, Phone, Lock, Upload } from "lucide-react";
 import {Eye, EyeOff, CheckCircle, XCircle , Info } from "lucide-react";
 
 const RegisterModal = ({ onRegister }) => {
-  const API_URL = import.meta.env.VITE_API_URL;
+  const API = import.meta.env.VITE_API_URL;
 
   const [formData, setFormData] = useState({
     name: "",
@@ -108,7 +108,7 @@ const RegisterModal = ({ onRegister }) => {
         data.append(key, formData[key]);
       });
 
-      const res = await axios.post(`${API_URL}/auth/register`, data, {
+      const res = await axios.post(`${API}/auth/register`, data, {
         headers: { "Content-Type": "multipart/form-data" },
       });
 

@@ -47,7 +47,10 @@ io.on("connection", (socket) => {
 
 //  Middleware
 app.use(cors({
-  origin: true,
+  origin:[
+    "https://rentora-car-rental-service.vercel.app",
+    "https://rentora-car-rental-service-o5x8kbaov-hastikoshiya08s-projects.vercel.app"
+  ],
   credentials: true
 }));
 app.use(express.json());
