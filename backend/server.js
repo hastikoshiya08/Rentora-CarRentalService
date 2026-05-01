@@ -20,7 +20,7 @@ const allowedOrigins = [
 //  Socket.io Setup
 const io = new Server(server, {
   cors: {
-    origin: allowedOrigins,
+    origin: true,
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   },
@@ -46,12 +46,10 @@ io.on("connection", (socket) => {
 });
 
 //  Middleware
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: true,
+  credentials: true
+}));
 app.use(express.json());
 app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
@@ -66,8 +64,13 @@ app.use("/api/contacts", require("./routes/contactRoutes"));
 app.use("/api/notifications", require("./routes/notificationRoutes"));
 app.use("/uploads", express.static("uploads"));
 
+app.get("/", (req, res) => {
+  res.send("🚀 Rentora API is running");
+});
+
 //  Start Server
 const PORT = process.env.PORT || 4000;
+
 server.listen(PORT, () =>
   console.log(`🚀 Server running on port ${PORT}`)
 );
