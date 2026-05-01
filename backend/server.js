@@ -24,9 +24,7 @@ app.use(cors({
 //  Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
-  "https://bookmycar-tau.vercel.app",
-  "https://rentora-car-rental-service.vercel.app/admin/login",
-  "https://rentora-car-rental-service.vercel.app/admin/register"
+  "https://bookmycar-tau.vercel.app"
 ];
 
 //  Socket.io Setup

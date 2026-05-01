@@ -116,32 +116,32 @@ function App() {
               <AdminLayout />
             </AdminProtectedRoute>
           }>
-          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="dashboard" element={<Dashboard />} />
           <Route path="newregister" element={<RegisterAdmin />} />
           <Route path="add-variants" element={<AddVariants />} />
           <Route path="variants" element={<Variants />} />
           <Route path="bookings" element={<AdminBookings />} />
           <Route path="customers" element={<AdminCustomers />} />
            <Route path="mybookings" element={<MyBookings />} />
-        </Route><Route
-  path="/admin"
-  element={
-    <AdminProtectedRoute>
-      <AdminLayout />
-    </AdminProtectedRoute>
-  }
->
-  <Route path="/admin/dashboard" element={<Dashboard />} />
-  <Route path="newregister" element={<RegisterAdmin />} />
-  <Route path="add-variants" element={<AddVariants />} />
-  <Route path="variants" element={<Variants />} />
-  <Route path="bookings" element={<AdminBookings />} />
-  <Route path="customers" element={<AdminCustomers />} />
-
-</Route>
+        </Route>
+        
+        {/* <Route
+          path="/admin"
+          element={
+            <AdminProtectedRoute>
+              <AdminLayout />
+            </AdminProtectedRoute>
+          }
+        >
+          <Route path="/admin/dashboard" element={<Dashboard />} />
+          <Route path="newregister" element={<RegisterAdmin />} />
+          <Route path="add-variants" element={<AddVariants />} />
+          <Route path="variants" element={<Variants />} />
+          <Route path="bookings" element={<AdminBookings />} />
+          <Route path="customers" element={<AdminCustomers />} />
+        </Route> */}
         
       </Routes>
-   
     </>
   );
 }
